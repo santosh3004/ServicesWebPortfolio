@@ -28,8 +28,12 @@ class AuthenticatedSessionController extends Controller
         $request->authenticate();
 
         $request->session()->regenerate();
+        $notification=array(
+            'alert-type'=>'info',
+            'message'=>'Welcome back '.Auth::user()->name
+        );
 
-        return redirect()->intended(RouteServiceProvider::HOME);
+        return redirect()->intended(RouteServiceProvider::HOME)->with($notification);
     }
 
     /**

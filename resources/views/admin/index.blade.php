@@ -4,7 +4,6 @@
 <!-- ============================================================== -->
             <!-- Start right Content here -->
             <!-- ============================================================== -->
-            <div class="main-content">
 
                 <div class="page-content">
                     <div class="container-fluid">
@@ -241,11 +240,8 @@
                         <!-- end row -->
                     </div>
 
-                </div>
-                <!-- End Page-content -->
 
-            </div>
 
-            <!-- end main content-->
+
 
 @endsection
