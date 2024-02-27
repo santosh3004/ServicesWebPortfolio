@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\Home\HomeSliderController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('frontend.index');
 });
 
 Route::get('/dashboard', function () {
@@ -37,7 +38,12 @@ Route::controller(AdminController::class)->group(function(){
     Route::get('/change/password','changepassword')->name('change.password');
     Route::post('/update/password','updatepassword')->name('update.password');
 
+    Route::get('/change/password','changepassword')->name('change.password');
+});
 
+Route::controller(HomeSliderController::class)->group(function(){
+    Route::get('/home/slide','homeslider')->name('home.slide');
+    Route::post('/update/slider','updateslider')->name('update.slider');
 
 });
 
