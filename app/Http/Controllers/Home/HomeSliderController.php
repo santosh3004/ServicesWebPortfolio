@@ -29,7 +29,7 @@ class HomeSliderController extends Controller
 
         HomeSlide::findOrFail($slide_id)->update([
             'title'=>$request->title,
-            'short_title'=>$request->title,
+            'short_title'=>$request->short_title,
             'home_slide'=>$save_url,
             'video_url'=>$request->video_url,
         ]);
