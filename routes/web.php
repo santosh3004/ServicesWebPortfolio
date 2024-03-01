@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Home\HomeSliderController;
 use App\Http\Controllers\Home\AboutController;
+use App\Http\Controllers\Home\PortfolioController;
 use App\Models\About;
 use Illuminate\Support\Facades\Route;
 
@@ -58,12 +59,13 @@ Route::controller(AboutController::class)->group(function(){
     Route::get('/about/edit/multiimage/{id}','abouteditmultiimage')->name('about.edit.multiimage');
     Route::post('/update/multi/image','updatemultiimage')->name('update.multiimage');
     Route::get('/about/delete/multiimage/{id}','aboutdeletemultiimage')->name('about.delete.multiimage');
-
-
-
-
-
-
 });
+
+Route::controller(PortfolioController::class)->group(function(){
+    Route::get('/all/portfolio','allportfolio')->name('all.portfolio');
+    Route::get('/add/portfolio','addportfolio')->name('add.portfolio');
+    Route::post('/store/portfolio','storeportfolio')->name('store.portfolio');
+});
+
 
 require __DIR__.'/auth.php';
