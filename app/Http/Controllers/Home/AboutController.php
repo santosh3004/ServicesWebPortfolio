@@ -116,14 +116,14 @@ class AboutController extends Controller
 
             MultiImage::findOrFail($request->id)->update([
             'multi_image'=>$save_url,
-             ]);
+             ]);}
 
         $notification= array(
             'alert-type'=>'success',
             'message'=>'Image Updated Successfully'
         );
 
-        return redirect()->route('about.all.multiimage')->with($notification);}
+        return redirect()->route('about.all.multiimage')->with($notification);
     }
     public function aboutdeletemultiimage($id){
         $image=MultiImage::findOrFail($id);

@@ -30,8 +30,8 @@
                         <td >{{$portfolio->portfolio_title}}</td>
                         <td><img src="{{asset($portfolio->portfolio_image)}}" alt="" width="100" srcset=""></td>
                         <td>
-                            <a href="{{route('about.edit.multiimage',$portfolio->id)}}" class="btn btn-info sm" title="Edit Data"><i class="fas fa-edit"></i></a>
-                            <a href="{{route('about.delete.multiimage',$portfolio->id)}}" id="delete" class="btn btn-danger sm" title="Delete Data"><i class="fas fa-trash-alt"></i></a>
+                            <a href="{{route('edit.portfolio',$portfolio->id)}}" class="btn btn-info sm" title="Edit Data"><i class="fas fa-edit"></i></a>
+                            <a href="{{route('delete.portfolio',$portfolio->id)}}" id="delete" class="btn btn-danger sm" title="Delete Data"><i class="fas fa-trash-alt"></i></a>
                         </td>
 
 
