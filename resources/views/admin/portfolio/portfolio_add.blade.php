@@ -61,7 +61,7 @@
                     <label for="example-text-input" class="col-sm-2 col-form-label">Chosen Image</label>
 
                     <div class="col-sm-10">
-                        <img id="chosenImage" class="rounded  avatar-lg" src="{{asset('upload/no_image.jpg')}}" alt="About Image">
+                        <img id="chosenImage" class="rounded  avatar-lg" src="{{asset('upload/no_image.jpg')}}" alt="Portfolio Image">
                     </div>
                 </div>
                 <!-- end row -->
