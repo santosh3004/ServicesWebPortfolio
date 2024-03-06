@@ -88,10 +88,10 @@ Route::controller(BlogCategoryController::class)->group(function(){
 Route::controller(BlogController::class)->group(function(){
     Route::get('/all/blog','allblog')->name('all.blog');
     Route::get('/add/blog','addblog')->name('add.blog');
+    Route::post('/store/blog','storeblog')->name('store.blog');
     Route::get('/edit/blog/{id}','editblog')->name('edit.blog');
     Route::post('/update/blog','updateblog')->name('update.blog');
     Route::get('/delete/blog/{id}','deleteblog')->name('delete.blog');
-
 
 });
 

@@ -21,13 +21,15 @@
                        </tr>
                     </thead>
                     <tbody>
+
+                        
                         @php
                             $i=1
                         @endphp
                         @foreach($blogs as $blog)
                         <tr class="odd">
                         <td >{{$i++}}</td>
-                        <td >{{$blog->blog_category_id}}</td>
+                        <td >{{$blog->category()->first()->blog_category}}</td>
                         <td >{{$blog->blog_title}}</td>
                         <td >{{$blog->blog_tags}}</td>
                         <td><img src="{{asset($blog->blog_image)}}" alt="" width="100" srcset=""></td>

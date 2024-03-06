@@ -2,6 +2,13 @@
 
 @section('admin')
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<style type="text/css">
+    .bootstrap-tagsinput .tag{
+        margin-right: 2px;
+        color: #b70000;
+        font-weight: 700px;
+    }
+</style>
 <div class="row">
     <div class="col-12">
         <div class="card">
@@ -28,9 +35,10 @@
                     <div class="col-sm-10">
                         <select class="form-select" name="blog_category" aria-label="Default select example">
                             <option selected="">Open this select menu</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
+                            @foreach ($categories as $category)
+                                <option value="{{$category->id}}">{{$category->blog_category}}</option>
+                            @endforeach
+
                             </select>
                     </div>
                     @error('blog_category')
@@ -42,8 +50,8 @@
                 <div class="row mb-3">
                     <label for="example-text-input" class="col-sm-2 col-form-label">Blog Tags</label>
                     <div class="col-sm-10">
-                        <input class="form-control" name="blog_tags" type="text"  id="title">
-                        
+                        <input class="form-control" name="blog_tags" value="home,tech" type="text"  id="blog_tags" data-role="tagsinput">
+
                     </div>
                 </div>
                 <!-- end row -->
