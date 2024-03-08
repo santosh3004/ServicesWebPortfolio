@@ -7,6 +7,7 @@ use App\Http\Controllers\Home\HomeSliderController;
 use App\Http\Controllers\Home\AboutController;
 use App\Http\Controllers\Home\PortfolioController;
 use App\Http\Controllers\Home\BlogCategoryController;
+use App\Http\Controllers\Home\FooterController;
 use App\Models\About;
 use Illuminate\Support\Facades\Route;
 
@@ -92,8 +93,17 @@ Route::controller(BlogController::class)->group(function(){
     Route::get('/edit/blog/{id}','editblog')->name('edit.blog');
     Route::post('/update/blog','updateblog')->name('update.blog');
     Route::get('/delete/blog/{id}','deleteblog')->name('delete.blog');
+    Route::get('/blog/details/{id}','blogdetails')->name('blog.details');
+
+    Route::get('/category/blog/{id}','categoryblog')->name('category.blog');
+    Route::get('/blogs','homeblogs')->name('home.blogs');
 
 });
 
+
+Route::controller(FooterController::class)->group(function(){
+    Route::get('/footer/details','footer')->name('footer.setup');
+    Route::post('/update/footer','updatefooter')->name('update.footer');
+});
 
 require __DIR__.'/auth.php';

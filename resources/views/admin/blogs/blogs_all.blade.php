@@ -22,7 +22,7 @@
                     </thead>
                     <tbody>
 
-                        
+
                         @php
                             $i=1
                         @endphp
@@ -38,8 +38,6 @@
                             <a href="{{route('delete.blog',$blog->id)}}" id="delete" class="btn btn-danger sm" title="Delete Data"><i class="fas fa-trash-alt"></i></a>
                         </td>
 
-
-
                     </tr>  @endforeach
                 </tbody>
                 </table>
@@ -47,8 +45,5 @@
         </div>
     </div> <!-- end col -->
 </div>
-
-
-
 
 @endsection

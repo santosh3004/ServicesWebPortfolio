@@ -17,4 +17,5 @@ class BlogCategory extends Model
     }
 
 
+
 }
