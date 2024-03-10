@@ -1,7 +1,9 @@
 @extends('frontend.main_master')
 @section('main')
 
-<main>
+@section('title')
+     About | SalesWebPortfolio
+    @endsection
 
     <!-- breadcrumb-area -->
     <section class="breadcrumb__wrap">
@@ -514,7 +516,7 @@
     </section>
     <!-- contact-area-end -->
 
-</main>
+
 
 
 

@@ -7,6 +7,7 @@ use App\Http\Controllers\Home\HomeSliderController;
 use App\Http\Controllers\Home\AboutController;
 use App\Http\Controllers\Home\PortfolioController;
 use App\Http\Controllers\Home\BlogCategoryController;
+use App\Http\Controllers\Home\ContactController;
 use App\Http\Controllers\Home\FooterController;
 use App\Models\About;
 use Illuminate\Support\Facades\Route;
@@ -36,6 +37,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+Route::middleware(('auth'))->group(function(){
 Route::controller(AdminController::class)->group(function(){
     Route::get('/admin/logout','destroy')->name('admin.logout');
     Route::get('/admin/profile','profile')->name('admin.profile');
@@ -43,8 +45,9 @@ Route::controller(AdminController::class)->group(function(){
     Route::post('/store/profile','storeprofile')->name('store.profile');
     Route::get('/change/password','changepassword')->name('change.password');
     Route::post('/update/password','updatepassword')->name('update.password');
-
     Route::get('/change/password','changepassword')->name('change.password');
+});
+
 });
 
 Route::controller(HomeSliderController::class)->group(function(){
@@ -72,6 +75,10 @@ Route::controller(PortfolioController::class)->group(function(){
     Route::post('/update/portfolio','updateportfolio')->name('update.portfolio');
     Route::get('/delete/portfolio/{id}','deleteportfolio')->name('delete.portfolio');
     Route::get('/portfolio/details/{id}','portfoliodetails')->name('portfolio.details');
+
+    Route::get('/portfolio','homeallportfolio')->name('home.portfolio');
+
+
 
 });
 
@@ -104,6 +111,16 @@ Route::controller(BlogController::class)->group(function(){
 Route::controller(FooterController::class)->group(function(){
     Route::get('/footer/details','footer')->name('footer.setup');
     Route::post('/update/footer','updatefooter')->name('update.footer');
+});
+
+Route::controller(ContactController::class)->group(function(){
+    Route::get('/contact','contact')->name('contact.me');
+    Route::post('/store/message','storemessage')->name('store.message');
+
+    Route::get('/admin/contact/messages','admincontactmessages')->name('admin.contact.messages');
+    Route::get('/admin/contact/message/delete/{id}','admincontactmessagedelete')->name('admin.contact.message.delete');
+
+
 });
 
 require __DIR__.'/auth.php';

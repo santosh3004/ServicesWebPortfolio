@@ -2,6 +2,10 @@
     @section('main')
 
 
+    @section('title')
+     Home | SalesWebPortfolio
+    @endsection
+
 
     <!-- banner-area -->
     @include('frontend.home_all.home_slide')

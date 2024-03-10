@@ -2,7 +2,6 @@
     $footer = App\Models\Footer::findOrFail(1);
 @endphp
 
-
 <footer class="footer">
     <div class="container">
         <div class="row justify-content-between">
