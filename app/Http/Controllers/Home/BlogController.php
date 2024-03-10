@@ -127,8 +127,8 @@ class BlogController extends Controller
     }
 
     public function categoryblog($id){
-        $recentblogs=Blog::where('blog_category_id',$id)->orderBy('id','desc')->get();
-        $blogs=Blog::latest()->limit(5)->get();
+        $blogs=Blog::where('blog_category_id',$id)->orderBy('id','desc')->paginate(1);
+        $recentblogs=Blog::latest()->limit(5)->get();
         $categories=BlogCategory::orderBy('blog_category','asc')->get();
         return view('frontend.blog_by_category',compact('blogs','categories','recentblogs'));
     }
